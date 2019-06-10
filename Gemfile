@@ -14,7 +14,7 @@ gem "puma", "~> 3.11"
 
 gem "rack-cors"
 
-gem "graphiti"
+gem "graphiti-rails"
 gem "kaminari"
 gem "responders"
 gem "versionist"
@@ -32,6 +32,8 @@ group :development, :test do
   gem "pry-byebug"
   gem "rubocop"
   gem "rubocop-performance"
+  gem 'spring'
+  gem 'spring-commands-rspec'
 end
 
 group :development do
