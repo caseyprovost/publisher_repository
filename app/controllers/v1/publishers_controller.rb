@@ -2,8 +2,6 @@
 
 module V1
   class PublishersController < ApplicationController
-    before_action :reset_id_param
-
     def index
       publishers = PublisherResource.all(params)
       respond_with(publishers)
@@ -43,17 +41,5 @@ module V1
         render jsonapi_errors: publisher
       end
     end
-
-    private
-
-      def reset_id_param
-        return if params[:id].blank?
-
-        new_id = Publisher.find_by(uuid: params[:id]).try(:id)
-
-        if new_id.present?
-          params[:id] = new_id
-        end
-      end
   end
 end

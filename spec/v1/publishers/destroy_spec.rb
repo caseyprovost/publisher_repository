@@ -4,7 +4,7 @@ require "rails_helper"
 
 RSpec.describe "publishers#destroy", type: :request do
   subject(:make_request) do
-    jsonapi_delete "/v1/publishers/#{publisher.id}"
+    jsonapi_delete "/v1/publishers/#{publisher.uuid}"
   end
 
   describe "basic destroy" do

@@ -18,7 +18,7 @@ RSpec.describe "publishers#show", type: :request do
       make_request
       expect(response.status).to eq(200)
       expect(d.jsonapi_type).to eq("publishers")
-      expect(d.attributes["id"]).to eq(publisher.id.to_s)
+      expect(d.attributes["id"]).to eq(publisher.uuid)
     end
   end
 end

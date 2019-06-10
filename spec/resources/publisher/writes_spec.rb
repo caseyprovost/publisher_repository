@@ -53,7 +53,7 @@ RSpec.describe PublisherResource, type: :resource do
     let!(:publisher) { create(:publisher) }
 
     let(:instance) do
-      PublisherResource.find(id: publisher.id)
+      PublisherResource.find(id: publisher.uuid)
     end
 
     it "works" do

@@ -18,7 +18,7 @@ RSpec.describe "publishers#index", type: :request do
       make_request
       expect(response.status).to eq(200), response.body
       expect(d.map(&:jsonapi_type).uniq).to match_array(["publishers"])
-      expect(d.map(&:id)).to match_array([publisher1.id, publisher2.id])
+      expect(d.map(&:rawid)).to match_array([publisher1.uuid, publisher2.uuid])
     end
   end
 end
