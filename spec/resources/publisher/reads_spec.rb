@@ -1,44 +1,46 @@
-require 'rails_helper'
+# frozen_string_literal: true
+
+require "rails_helper"
 
 RSpec.describe PublisherResource, type: :resource do
-  describe 'serialization' do
+  describe "serialization" do
     let!(:publisher) { create(:publisher) }
 
-    it 'works' do
+    it "works" do
       render
       data = jsonapi_data[0]
       expect(data.id).to eq(publisher.id)
-      expect(data.jsonapi_type).to eq('publishers')
+      expect(data.jsonapi_type).to eq("publishers")
     end
   end
 
-  describe 'filtering' do
+  describe "filtering" do
     let!(:publisher1) { create(:publisher) }
     let!(:publisher2) { create(:publisher) }
 
-    context 'by id' do
+    context "by id" do
       before do
         params[:filter] = { id: { eq: publisher2.id } }
       end
 
-      it 'works' do
+      it "works" do
         render
         expect(d.map(&:id)).to eq([publisher2.id])
       end
     end
   end
 
-  describe 'sorting' do
-    describe 'by id' do
+  describe "sorting" do
+    describe "by id" do
       let!(:publisher1) { create(:publisher) }
       let!(:publisher2) { create(:publisher) }
 
-      context 'when ascending' do
+      context "when ascending" do
         before do
-          params[:sort] = 'id'
+          params[:sort] = "id"
         end
 
-        it 'works' do
+        it "works" do
           render
           expect(d.map(&:id)).to eq([
             publisher1.id,
@@ -47,12 +49,12 @@ RSpec.describe PublisherResource, type: :resource do
         end
       end
 
-      context 'when descending' do
+      context "when descending" do
         before do
-          params[:sort] = '-id'
+          params[:sort] = "-id"
         end
 
-        it 'works' do
+        it "works" do
           render
           expect(d.map(&:id)).to eq([
             publisher2.id,
@@ -63,7 +65,7 @@ RSpec.describe PublisherResource, type: :resource do
     end
   end
 
-  describe 'sideloading' do
+  describe "sideloading" do
     # ... your tests ...
   end
 end

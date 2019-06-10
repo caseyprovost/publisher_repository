@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Publisher < ApplicationRecord
   after_initialize :set_uuid
 
@@ -7,7 +9,7 @@ class Publisher < ApplicationRecord
 
   private
 
-  def set_uuid
-    self.uuid ||= SecureRandom.uuid
-  end
+    def set_uuid
+      self.uuid ||= SecureRandom.uuid
+    end
 end

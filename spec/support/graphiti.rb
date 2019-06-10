@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 module GraphitiSpecHelpers
-  def expect_jsonapi_error(error_name, status: 404, error: { }, detailed: false)
+  def expect_jsonapi_error(error_name, status: 404, error: {}, detailed: false)
     expect(response).to_not be_successful
     expect(response.status).to eq(status)
     expect(response.content_type).to eq("application/vnd.api+json")
@@ -12,7 +14,7 @@ module GraphitiSpecHelpers
           )
         )
       else
-        { }
+        {}
       end
 
     json = JSON.parse(response.body)
@@ -63,7 +65,7 @@ module GraphitiSpecHelpers
   end
 end
 
-require 'graphiti_spec_helpers/rspec'
+require "graphiti_spec_helpers/rspec"
 
 RSpec.configure do |config|
   config.include GraphitiSpecHelpers
