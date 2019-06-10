@@ -18,6 +18,8 @@ gem "graphiti"
 gem "kaminari"
 gem "responders"
 gem "versionist"
+gem "factory_bot_rails"
+gem "faker"
 
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 # gem 'rack-cors'
@@ -25,8 +27,6 @@ gem "versionist"
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem "database_cleaner"
-  gem "factory_bot_rails"
-  gem "faker"
   gem "graphiti_spec_helpers"
   gem "pry"
   gem "pry-byebug"
