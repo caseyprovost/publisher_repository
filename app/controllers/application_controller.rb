@@ -1,8 +1,7 @@
 # frozen_string_literal: true
 
 class ApplicationController < ActionController::API
-  include Graphiti::Rails
-  include Graphiti::Responders
+  respond_to :jsonapi
 
   register_exception Graphiti::Errors::RecordNotFound, status: 404
 
