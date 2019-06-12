@@ -6,7 +6,7 @@ class PublisherResource < ApplicationResource
   end
 
   filter :id, only: [:eq] do
-    eq { |scope, value| scope.find_by(uuid: value) }
+    eq { |scope, value| scope.where(uuid: value) }
   end
 
   attribute :name, :string
