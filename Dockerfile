@@ -1,4 +1,4 @@
-FROM ruby:2.6.2-alpine as builder
+FROM ruby:2.6.3-alpine as builder
 
 # Set local timezone
 RUN apk add --update tzdata && \

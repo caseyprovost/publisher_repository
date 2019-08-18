@@ -20,11 +20,11 @@ module GraphitiSpecHelpers
     json = JSON.parse(response.body)
     expect(json["errors"]).to match([
       a_hash_including(
-        { "code" => "not_found",
-          "status" => status.to_s,
-          "title" => "Not Found",
-          "meta" => meta }.merge(error)
-      )
+        {"code" => "not_found",
+         "status" => status.to_s,
+         "title" => "Not Found",
+         "meta" => meta,}.merge(error)
+      ),
     ])
   end
 

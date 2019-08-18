@@ -17,8 +17,8 @@ RSpec.describe "publishers#update", type: :request do
           type: "publishers",
           attributes: {
             # ... your attrs here
-          }
-        }
+          },
+        },
       }
     end
 

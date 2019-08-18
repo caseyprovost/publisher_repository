@@ -8,8 +8,8 @@ RSpec.describe PublisherResource, type: :resource do
       {
         data: {
           type: "publishers",
-          attributes: attributes_for(:publisher)
-        }
+          attributes: attributes_for(:publisher),
+        },
       }
     end
 
@@ -32,8 +32,8 @@ RSpec.describe PublisherResource, type: :resource do
         data: {
           id: publisher.id.to_s,
           type: "publishers",
-          attributes: {} # Todo!
-        }
+          attributes: {}, # Todo!
+        },
       }
     end
 

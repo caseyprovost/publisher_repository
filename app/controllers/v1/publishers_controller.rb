@@ -36,7 +36,7 @@ module V1
       publisher = PublisherResource.find(params)
 
       if publisher.destroy
-        render jsonapi: { meta: {} }, status: 200
+        render jsonapi: {meta: {}}, status: 200
       else
         render jsonapi_errors: publisher
       end

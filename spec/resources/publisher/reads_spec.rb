@@ -20,7 +20,7 @@ RSpec.describe PublisherResource, type: :resource do
 
     context "by id" do
       before do
-        params[:filter] = { id: { eq: publisher2.uuid } }
+        params[:filter] = {id: {eq: publisher2.uuid}}
       end
 
       it "works" do
@@ -44,7 +44,7 @@ RSpec.describe PublisherResource, type: :resource do
           render
           expect(d.map(&:rawid)).to eq([
             publisher1.uuid,
-            publisher2.uuid
+            publisher2.uuid,
           ])
         end
       end
@@ -58,7 +58,7 @@ RSpec.describe PublisherResource, type: :resource do
           render
           expect(d.map(&:rawid)).to eq([
             publisher2.uuid,
-            publisher1.uuid
+            publisher1.uuid,
           ])
         end
       end

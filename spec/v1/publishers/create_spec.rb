@@ -15,8 +15,8 @@ RSpec.describe "publishers#create", type: :request do
       {
         data: {
           type: "publishers",
-          attributes: params
-        }
+          attributes: params,
+        },
       }
     end
 
